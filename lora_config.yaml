@@ -1,0 +1,23 @@
+model: models/phi3_mini_4k_instruct_4bit
+
+train: true
+data: data/
+
+iters: 1000
+batch_size: 16
+learning_rate: 1e-5
+save_path: output/lora_finetuned_phi3
+
+lora_layers:
+  - q_proj
+  - v_proj
+
+lora_parameters:
+  rank: 16
+  alpha: 32
+  dropout: 0.05
+  scale: 2.0   
+
+target_modules:
+  - mlp
+  - self_attn
