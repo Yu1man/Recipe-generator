@@ -4,6 +4,8 @@ A system that ables users to scan the ingredients that they have, and generate s
 
 When the user scan the ingredients that they have and press the scan button, the system will pass that frame into an ingredient classifier built by PyTorch, and the results will be stored in an array. After pressing the generate key, the ingredients in the stored array will be passed to the fine-tuned phi3_mini_4k_instruct_4bit model, which able to generate a reader-friendly recipe with the above requirement. The user can also input special requirement (e.g. There's no oven in my house) before generate.
 
+The ingredient classifier can only classify carrot, chicken, corn, egg, garlic, lettuce, mushroom, onion, potato, salmon, shrimp, tomato.
+
 ## File Architecture
 The main program is "food-recipe.ipynb". User have to download the  phi3_mini_4k_instruct_4bit model, fine-tune it with the intructions below, then run all to activate the software.
 
